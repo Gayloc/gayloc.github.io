@@ -1,0 +1,72 @@
+li {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background-color: rgba(75, 73, 73, 0.425);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(46, 45, 45, 0.523);
+}
+
+body {
+    background: url("https://img1.imgtp.com/2023/09/20/1O38Olem.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+}
+
+p.logo {
+    font-size: 15px;
+    color: white;
+    float: left;
+    top: 0;
+    left: 0;
+}
+
+header {
+    position: fixed;
+}
+
+div.search-box {
+    position: absolute;
+    border: 5px;
+    border-style: solid;
+    width: 40%;
+    height: 6%;
+    border-color: grey;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    margin: auto;
+}
+
+div.search-box p {
+    position: absolute;
+    left: 3%;
+    top: 25%;
+    margin: auto;
+    font-size: 20px;
+}
