@@ -148,7 +148,7 @@ div.history ul li {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 75px;
+    width: 90px;
     float: left;
 }
 
