@@ -140,11 +140,13 @@
         }
 
         function update(date_el) {
+            var week = ["日","一","二","三","四","五","六"]
             let date = new Date();
-            let day = date.getDay();
-            let month = date.getMonth();
+            let day = date.getDate();
+            let month = date.getMonth()+1;
             let year = date.getFullYear();
-            date_el.textContent = year + "年" + month + "月" + day + "日";
+            let week_index = date.getDay();
+            date_el.textContent = year + "年" + month + "月" + day + "日 星期"+week[week_index];
         }
 
         function hot() {
