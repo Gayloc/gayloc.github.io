@@ -1,8 +1,8 @@
-li {
+nav ul li {
     float: right;
 }
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ ul {
     width: 100%;
 }
 
-li a {
+nav ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -40,6 +40,7 @@ p.logo {
     float: left;
     top: 0;
     left: 0;
+    cursor: default;
 }
 
 header {
@@ -64,8 +65,6 @@ form.search-box  input[type=text] {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.7);
@@ -74,22 +73,31 @@ form.search-box  input[type=text] {
     font-size: 20px;
 }
 
-form.search-box button[type=submit] {
+form.search-box button {
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
     position: absolute;
-    display: flex;
     border: 0;
     border-radius: 25px;
+    cursor: pointer;
+}
+
+form.search-box button:hover {
+    border: 2px;
+    border-color: grey;
+    border-style: solid;
 }
 
 form.search-box div.time {
     position: absolute;
-    width: 40%;
+    width: 100%;
     height: 20%;
-    left: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
     top: -200%;
     font-size: 30px;
     text-align: center;
@@ -98,10 +106,61 @@ form.search-box div.time {
 
 form.search-box div.time p {
     position: absolute;
-    width: 40%;
+    width: 100%;
     height: 20%;
     left: 0;
+    right: 0;
+    margin: auto;
     font-size: 30px;
     text-align: center;
+    color: white; 
+    white-space: nowrap;
+}
+
+.history {
+    position: absolute;
+    top: 17%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 0;
+    width: 40%;
+    height: 10%;
+    text-align: left;
     color: white;
+    font-size: 15px;
+}
+
+div.history ul li {
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    margin: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75px;
+    float: left;
+}
+
+#clear {
+    cursor: pointer;
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    left: 30%;
+    top: 65%;
+}
+
+#clear:hover {
+    text-decoration: underline;
 }

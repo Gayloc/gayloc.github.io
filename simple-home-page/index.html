@@ -8,26 +8,152 @@
         简单的主页
     </title>
     <link rel="stylesheet" type="text/css" href="./style.css">
+
 </head>
 
 <body>
     <header class="header">
         <nav>
             <ul>
-                <p class="logo">💕好好好</p>
-                <li><a>首页</a></li>
-                <li><a>地图</a></li>
-                <li><a>新闻</a></li>
-                <li><a>图片</a></li>
+                <p class="logo">💕简单的小主页</p>
+                <li><a href="https://www.baidu.com/">首页</a></li>
+                <li><a href="https://map.baidu.com/">地图</a></li>
+                <li><a href="https://news.baidu.com/">新闻</a></li>
+                <li><a href="https://image.baidu.com/">图片</a></li>
             </ul>
         </nav>
     </header>
-    <form class="search-box">
+    <form class="search-box" action="https://www.baidu.com/s" method="get" id="search" onsubmit="return check()">
         <div class="time">
-            <p style="font-size: 50px;top: -700%;">placeholder</p>
-            <p style="top: 150%;">xxxxxxxxxx</p>
+            <p style="font-size: 80px;top: -1500%;" id="time"></p>
+            <p id="date"></p>
         </div>
-        <input type="text" placeholder="搜索">
-        <button type="submit"><object data="./src/search.svg" type="image/svg+xml"></object></button>
+        <input type="text" placeholder="去搜索一下吧😊" name="word" id="word" autocomplete="off">
+        <button type="submit" onclick="store()"><img src="./src/search.svg" alt="搜索"></button>
+        <button onclick="hot()" style="right: 7%;" type="button"><img src="./src/fire.svg" alt="hot"></button>
+        <button style="right: 14%;" type="reset"><img src="./src/undo.svg" alt="reset"></button>
     </form>
+    <div class="history">
+        搜索发现：<br>
+        <ul id="history">
+
+        </ul>
+    </div>
+    <p onclick="del()" id="clear">清除搜索历史记录</p>
+    <script>
+        var time = document.querySelector("#time");
+        var date = document.querySelector("#date");
+        var hty = new Array()
+        uptime(time);
+        update(date);
+        setInterval(() => {
+            uptime(time);
+            update(date);
+        }, 1000);
+        history();
+
+        function check() {
+            var value = document.querySelector("#word").value;
+            if (value != "") {
+                return true;
+            } else {
+                alert("搜索内容不能为空")
+                return false;
+            }
+        }
+
+        function redirect(word) {
+            window.location.href = "https://www.baidu.com/s?word=" + word
+        }
+
+        function store() {
+            var value = document.querySelector("#word").value;
+            if (value != "") {
+                if (Number(localStorage.sum) <= 10) {
+                    hty[Number(localStorage.sum)] = value
+                    localStorage.sum = Number(localStorage.sum) + 1;
+                } else {
+                    for (var i = 0; i < 9; i++) {
+                        hty[i] = hty[i + 1];
+                    }
+                    hty[9] = value;
+                }
+                localStorage.setItem("hty", JSON.stringify(hty))
+            }
+        }
+
+        function history() {
+            if (localStorage.hty != undefined) {
+                hty = JSON.parse(localStorage.hty)
+            }
+
+            if (hty.length == 0) {
+                localStorage.setItem("sum", "0");
+            }
+            var history = document.querySelector("#history");
+            if (localStorage.sum != "0") {
+                for (var i = Number(localStorage.sum) - 1; i >= 0; i--) {
+                    var node = document.createElement("li");
+                    var text = document.createTextNode(hty[i]);
+                    var typ = document.createAttribute("onclick")
+                    typ.nodeValue = "redirect('" + hty[i] + "')";
+                    node.appendChild(text);
+                    node.attributes.setNamedItem(typ)
+                    history.appendChild(node);
+                }
+            } else {
+                var node = document.createElement("p");
+                var text = document.createTextNode("还没有搜索记录，搜索一下吧");
+                node.appendChild(text);
+                history.appendChild(node);
+                var btn = document.querySelector("#clear");
+                var typ = document.createAttribute("style");
+                typ.nodeValue = "visibility: hidden;";
+                btn.attributes.setNamedItem(typ);
+            }
+        }
+
+        function del() {
+            localStorage.clear();
+            localStorage.setItem("sum", "0");
+            location.reload()
+        }
+
+        function uptime(time_el) {
+            let date = new Date();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s = date.getSeconds();
+            let day_night = "上午";
+
+            if (h > 12) {
+                h = h - 12;
+                day_night = "下午";
+            }
+
+            if (h < 10) { h = "0" + h; }
+            if (m < 10) { m = "0" + m; }
+            if (s < 10) { s = "0" + s; }
+
+            time_el.textContent = day_night + h + ":" + m + ":" + s;
+
+        }
+
+        function update(date_el) {
+            let date = new Date();
+            let day = date.getDay();
+            let month = date.getMonth();
+            let year = date.getFullYear();
+            date_el.textContent = year + "年" + month + "月" + day + "日";
+        }
+
+        function hot() {
+            var search = document.querySelector("#search")
+            var list = ["南⼤家园", "云家园", "家园⼯作室", "⼩家园传声机"]
+            search.word.value = list[Math.floor(Math.random() * list.length)]
+        }
+    </script>
+
+</body>
+
 </html>
