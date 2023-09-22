@@ -1,5 +1,9 @@
 name: Generate index.md
 on:
+  push:
+    branches:
+      - master
+
   schedule:
   - cron: '0 * * * *'
 
@@ -8,7 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: run generate.py
-       env: 
-         FOLDER: information-page
        run:
-         python ./generate.py
+         python information-page/generate.py
