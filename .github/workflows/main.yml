@@ -1,0 +1,14 @@
+name: Generate index.md
+on:
+  schedule:
+  - cron: '0 * * * *'
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+     - name: run generate.py
+       env: 
+         FOLDER: information-page
+       run:
+         python ./generate.py
