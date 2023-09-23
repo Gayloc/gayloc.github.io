@@ -27,6 +27,15 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
+     - name: checkout
+       uses: actions/checkout@v2
      - name: run generate.py
-       run:
-         python ../information-page/generate.py
+       run: |
+         cd ./information-page/ && python ./generate.py
+         git diff
+         git config --global user.email "gu18647403665@outlook.com"
+         git config --global user.name "Gayloc"
+         git add ./index.md
+         git commit -m "Github Action Auto Updated"
+         git push
+         
