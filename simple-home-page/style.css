@@ -1,9 +1,16 @@
-nav ul li {
-    float: right;
+ul.nav li {
+    margin: 0;
+    padding: 10px;
+    display: flex;
 }
 
-nav ul {
-    list-style-type: none;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -13,17 +20,32 @@ nav ul {
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    z-index: 1;
 }
 
-nav ul li a {
+ul.nav {
+    position: relative;
+    list-style-type: none;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    margin-left: auto;
+}
+
+ul.nav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
-li a:hover {
+ul.nav li:hover {
+    cursor: pointer;
     background-color: rgba(46, 45, 45, 0.523);
 }
 
@@ -32,15 +54,18 @@ body {
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
+    display: flex;
 }
 
 p.logo {
     font-size: 15px;
     color: white;
-    float: left;
+    position: relative;
     top: 0;
     left: 0;
+    bottom: 0;
     cursor: default;
+    display: inline;
 }
 
 header {
@@ -48,40 +73,34 @@ header {
 }
 
 form.search-box {
-    position: absolute;
-    border: 0;
-    width: 40%;
-    height: 5%;
-    top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-form.search-box  input[type=text] {
-    position: absolute;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+form.search-box input[type="text"] {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 35px;
     font-size: 20px;
+    margin: auto;
+    height: 100%;
+    width: 100%;
 }
 
 form.search-box button {
+    position: relative;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
-    position: absolute;
     border: 0;
     border-radius: 25px;
     cursor: pointer;
+    border: 2px;
+    border-color: white;
+    border-style: solid;
 }
 
 form.search-box button:hover {
@@ -91,45 +110,36 @@ form.search-box button:hover {
 }
 
 form.search-box div.time {
-    position: absolute;
-    width: 100%;
-    height: 20%;
-    left: 0;
-    right: 0;
-    margin: auto;
+    position: relative;
     display: flex;
-    top: -200%;
     font-size: 30px;
     text-align: center;
     color: white;
 }
 
 form.search-box div.time p {
-    position: absolute;
-    width: 100%;
-    height: 20%;
-    left: 0;
-    right: 0;
-    margin: auto;
+    position: relative;
     font-size: 30px;
     text-align: center;
-    color: white; 
+    color: white;
     white-space: nowrap;
 }
 
 .history {
-    position: absolute;
-    top: 17%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border: 0;
-    width: 40%;
-    height: 10%;
+    position: relative;
     text-align: left;
     color: white;
     font-size: 15px;
+    width: 50%;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+}
+
+div.history ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 div.history ul li {
@@ -143,24 +153,51 @@ div.history ul li {
     padding-bottom: 0.1%;
     padding-left: 0.5%;
     padding-right: 0.5%;
-    margin: 5px;
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 90px;
     float: left;
+    margin: 5px;
 }
 
 #clear {
     cursor: pointer;
     font-size: 10px;
     color: white;
-    position: absolute;
-    left: 30%;
-    top: 65%;
+    position: relative;
 }
 
 #clear:hover {
     text-decoration: underline;
+}
+
+div.main-box {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+div.time {
+    display: flex;
+    flex-direction: column;
+}
+
+#time {
+    font-size: 7vw;
+    margin-bottom: 0;
+}
+
+#date {
+    font-size: 3vw;
+    margin-top: 0;
+}
+
+div.history ul {
+    display: flex;
+    margin: 0;
 }
