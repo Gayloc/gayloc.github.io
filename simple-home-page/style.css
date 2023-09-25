@@ -10,6 +10,7 @@ html, body {
     padding: 0;
 }
 
+
 header {
     margin: 0;
     padding: 0;
@@ -57,6 +58,8 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 p.logo {
@@ -78,6 +81,7 @@ form.search-box {
     position: relative;
     display: flex;
     flex-direction: column;
+    margin: 20px;
 }
 
 form.search-box input[type="text"] {
@@ -143,11 +147,12 @@ form.search-box div.time p {
     text-align: left;
     color: white;
     font-size: 15px;
-    width: 50%;
+    width: 55vw;
     align-items: start;
     display: flex;
     flex-direction: column;
     cursor: default;
+    margin: 10px;
 }
 
 div.history ul {
@@ -197,6 +202,8 @@ div.main-box {
     display: flex;
     position: relative;
     width: 100%;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
@@ -231,4 +238,49 @@ div.history ul {
 
 @keyframes ToTransparent {
     to {background: rgba(255, 255, 255, 0.6);}
+}
+
+div.card-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    width: 95%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    justify-content: center;
+}
+
+
+
+div.card {
+    display: flex;
+    width: 90%;
+    margin: 5px;
+    min-height: 20vh;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 5px rgba(46, 45, 45, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div.card img {
+    height: 20vh;
+    width: auto;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+div.card a {
+    font-size: 30px;
+    display: block;
+    width: 70%;
+}
+
+div.card p {
+    display: block;
+    width: 70%;
 }
