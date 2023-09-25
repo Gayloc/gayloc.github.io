@@ -20,7 +20,7 @@ function check() {
 }
 
 function redirect(word) {
-    window.location.href = "https://www.baidu.com/s?word=" + word
+    window.location.href = "https://www.bing.com/search?q=" + word
 }
 
 function store() {
