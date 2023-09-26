@@ -53,7 +53,7 @@ ul.nav li:hover {
 }
 
 body {
-    background: url("./src/RW198v3.jpeg") no-repeat center center fixed;
+    background: url("./../src/RW198v3.jpeg") no-repeat center center fixed;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply;
