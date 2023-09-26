@@ -56,6 +56,10 @@ function addCard(card_box, img_params, title_params, copyright_params, copyright
 function addContent() {
     let card_box=document.querySelector(".card-box");
     for (let i=0 ; i < 5; i++) {
+        if (index>=list.length){
+            alert("没有更多了");
+            break;
+        }
         addCard(card_box,list[index].url,list[index].title,list[index].copyright,list[index].copyrightlink);
         index++;
     }
