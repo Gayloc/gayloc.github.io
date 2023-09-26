@@ -284,3 +284,45 @@ div.card p {
     display: block;
     width: 70%;
 }
+
+div.scroll {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 55px;
+    height: 55px;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+div.scroll:hover {
+    cursor: pointer;
+    animation: ToTransparent 0.5s;
+    animation-fill-mode: both;
+}
+
+div.more {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin: 5px;
+    font-size: 20px;
+    width: 90%;
+    text-align: center;
+    order: 1;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+div.more:hover {
+    cursor: pointer;
+    animation-name: ToTransparent;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
