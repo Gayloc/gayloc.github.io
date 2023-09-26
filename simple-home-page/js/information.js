@@ -43,7 +43,7 @@ function addCard(card_box, img_params, title_params, copyright_params, copyright
     title.innerHTML = title_params;
 
     let title_href = document.createAttribute("href");
-    title_href.nodeValue = "https://www.bing.com/"+copyrightlink_params;
+    title_href.nodeValue = copyrightlink_params;
     title.attributes.setNamedItem(title_href);
 
     img.attributes.setNamedItem(img_src);
