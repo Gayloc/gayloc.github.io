@@ -69,7 +69,7 @@ p.logo {
     top: 0;
     left: 0;
     bottom: 0;
-    cursor: default;
+    cursor: pointer;
     display: inline;
 }
 
