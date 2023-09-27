@@ -23,7 +23,7 @@ function setCardBox(content) {
         card_box.appendChild(more);
 
         let body_img=document.createAttribute("style");
-        body_img.nodeValue="background: url('"+"https://www.bing.com"+list[Math.floor(Math.random() * list.length)].url+"') no-repeat center center fixed;background-color: rgba(0, 0, 0, 0.3);background-blend-mode: multiply;background-size: cover;";
+        body_img.nodeValue=`background: url('https://www.bing.com${list[Math.floor(Math.random() * list.length)].url}') no-repeat center center fixed;background-color: rgba(0, 0, 0, 0.3);background-blend-mode: multiply;background-size: cover;`;
         body.attributes.setNamedItem(body_img);
 
         addContent();
