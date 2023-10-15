@@ -90,9 +90,10 @@ body {
 }
 
 .card {
+    min-width: 500px;
     display: flex;
     flex-direction: row;
-    width: 70%;
+    max-width: 70%;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 5px 5px rgba(46, 45, 45, 0.1);
@@ -109,7 +110,7 @@ body {
 
 .card-icon {
     display: flex;
-    width: 1000px;
+    width: 15%;
     align-items: flex-start;
 }
 
@@ -120,6 +121,7 @@ body {
 
 .card-content {
     display: flex;
+    width: 85%;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -170,7 +172,40 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: flex-end;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.card-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-comment .card {
+    max-width: 90%;
+    min-width: auto;
+}
+
+.tag {
+    background-color: white;
+    border-radius: 30px;
+    padding:5px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    font-size: 15px;
+}
+
+.tag:hover {
+    background-color: gray;
+    transition: all 0.5s;
+}
+
+.tag svg {
+    height: 100%;
+    width: 40px;
 }
 
 .card-actions img {
