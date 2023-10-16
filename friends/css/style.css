@@ -90,7 +90,7 @@ body {
 }
 
 .card {
-    min-width: 500px;
+    min-width: 400px;
     display: flex;
     flex-direction: row;
     max-width: 70%;
