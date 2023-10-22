@@ -173,14 +173,17 @@ ul.nav li a {
 }
 
 ul.nav li {
-    margin: 5px;
+    margin: 0px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s;
 }
 
 ul.nav li:hover {
     cursor: pointer;
+    background-color: rgba(46, 45, 45, 0.523);
 }
 
 .container {
@@ -191,6 +194,11 @@ ul.nav li:hover {
     border-radius: 30px;
     width: 50px;
     cursor: pointer;
+    transition: all 0.5s;
+}
+
+.container:hover {
+    background-color: rgba(46, 45, 45, 0.523);
 }
 
 .container svg{
