@@ -26,8 +26,6 @@ body {
     text-align: center;
     font:bold 70px "等线";
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-    user-select: none;
 }
 
 .hitokoto-left {
