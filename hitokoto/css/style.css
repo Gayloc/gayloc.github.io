@@ -1,0 +1,199 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background: url(../src/th.jpg) no-repeat center center fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+    height: 40vh;
+    width: 100%;
+}
+
+.hitokoto {
+    margin: 0;
+    color: white;
+    align-self: center;
+    width: 90%;
+    text-align: center;
+    font:bold 70px "等线";
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hitokoto-left {
+    margin: 0;
+    font-size: 100px;
+    color: white;
+    align-self: flex-start;
+}
+
+.hitokoto-right {
+    margin: 0;
+    font-size: 100px;
+    color: white;
+    align-self: flex-end;
+}
+
+.from {
+    margin: 0;
+    margin-right: 10%;
+    font-size: 20px;
+    color: white;
+}
+
+.from-who {
+    margin: 0;
+    margin-right: 10%;
+    font-size: 20px;
+    color: white;
+}
+
+.sidebar-container {
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    bottom: 0;
+    margin: auto;
+    min-width: 30%;
+    max-width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(75, 73, 73, 0.425);
+    transition: all 0.5s;
+}
+
+.sidebar-container-hidden {
+    position: fixed;
+    left: -100%;
+    top: 5vh;
+    bottom: 0;
+    margin: auto;
+    min-width: 30%;
+    max-width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(75, 73, 73, 0.425);
+    transition: all 0.5s;
+}
+
+.box-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+
+hr {
+    width: 100%;
+    background-color: black;
+    height: 1px;
+    border: 0;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.box-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-content table {
+    width: 90%;
+    height: 80%;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 15px;
+}
+
+.a {
+    width: 20%;
+}
+
+.b {
+    width: 80%;
+}
+
+.actions {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20%;
+}
+
+.actions-item {
+    height: 20%;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background-color: rgba(75, 73, 73, 0.425);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    z-index: 1;
+    justify-content: space-between;
+}
+
+ul.nav {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: space-between;
+}
+
+ul.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+ul.nav li {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.nav li:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 30px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.container svg{
+    width: 70%;
+    height: 70%;
+}
